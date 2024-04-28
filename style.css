@@ -39,6 +39,10 @@ a {
     color: var(--cor-de-link);
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 /*Neste desafio, gostariamos que praticassem a metodologia BEM, caso se sintam a vontade 
 de utiliza-la. 
 
@@ -320,7 +324,6 @@ section.academic {
 .academic__courses__item__title {
     font-size: 16px;
     font-weight: bold;
-
 }
 
 .academic__courses__item__subtitle {
@@ -390,6 +393,7 @@ section.experience {
     height: 40px;
     font-size: 14px;
     font-weight: 600;
+    color: #2A7AE4;
 }
 
 .experiencia__botao--repo:hover {
@@ -404,6 +408,10 @@ section.experience {
     height: 40px;
     font-size: 14px;
     font-weight: 600;
+}
+
+.experiencia__botao--demo:hover {
+    background-color: #5595E9;
 }
 
 /*Contato*/
@@ -474,6 +482,10 @@ section.formcontato {
     font-weight: 600;
 }
 
+.formcontato__botao:hover {
+    background-color: #5595E9;
+}
+
 /*footer*/
 
 section.footer {
@@ -520,6 +532,10 @@ utilize como referência os breakpoints @media abaixo*/
 
     .title__subsection {
         font-size: 16px;
+    }
+
+    .title__network {
+        gap: 32px;
     }
 
     .title__network__item a {
@@ -700,6 +716,20 @@ utilize como referência os breakpoints @media abaixo*/
         height: 406px;
     }
 
+    .experiencia__botao--repo {
+        font-size: 16px;
+        font-weight: 400;
+        width: 116px;
+        height: 51px;
+    }
+
+    .experiencia__botao--demo {
+        font-size: 16px;
+        font-weight: 400;
+        width: 105px;
+        height: 51px;
+    }
+    
     /*Contato*/
 
     section.formcontato {
@@ -725,6 +755,8 @@ utilize como referência os breakpoints @media abaixo*/
     }
 
     .formcontato__botao {
+        font-size: 16px;
+        font-weight: 400;
         height: 51px;
         width: 165px;
     }
