@@ -28,6 +28,14 @@ body {
     overflow-x: hidden;
 }
 
+input, select, textarea, button {
+    font-family: 'Raleway';
+}
+
+input, select, textarea {
+    font-size: 16px;
+}
+
 ol,
 ul,
 li {
@@ -446,30 +454,48 @@ section.formcontato {
 .formcontato__input {
     height: 56px;
     border: none;
+    border-bottom: 1px solid #C8C8C8;
     border-radius: 4px;
     outline: none;
+    padding: 0px 12px;
 }
 
 .formcontato__input::placeholder {
     font-size: 16px;
     font-weight: 400;
     color: #a2a2a2;
-    font-family: 'Raleway';
+}
+
+.formcontato__input:focus {
+    border-bottom: 2px solid #2A7AE4;
+
 }
 
 .formcontato__textarea {
     height: 133px;
     border: none;
+    border-bottom: 1px solid #C8C8C8;
     border-radius: 4px;
     resize: none;
     outline: none;
+    padding: 16px 12px;
+    
 }
 
 .formcontato__textarea::placeholder {
+    position: absolute;
     font-size: 16px;
     font-weight: 400;
     color: #a2a2a2;
     font-family: 'Raleway';
+}
+
+.formcontato__input:focus::placeholder {
+
+}
+
+.formcontato__textarea:focus {
+    border-bottom: 2px solid #2A7AE4;
 }
 
 .formcontato__botao {
