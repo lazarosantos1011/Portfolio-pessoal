@@ -277,12 +277,21 @@
                     <h3 class="formcontato__subtext">Preencha o formulário ao lado e entrarei em contato o mais
                         rápido possível. </h3>
                     <form class="formcontato__form">
-                        <input class="formcontato__input" type="text" id="nome" placeholder="Nome" oninput="validaNome()">
-                        <input class="formcontato__input" type="email" id="email" placeholder="Email" oninput="validaEmail()">
-                        <input class="formcontato__input" type="text" id="assunto" placeholder="Assunto" oninput="validaAssunto()">
-                        <textarea class="formcontato__textarea" rows="5" cols="40" id="mensagem" name="mensagem"
+                        <input class="formcontato__input required" type="text" id="nome" placeholder="Nome" oninput="validaNome()">
+                        <span class="span-campo-vazio">Campo do nome não pode estar vazio</span>
+                        <span class="span-limite-caracteres">Campo do nome deve ter no máximo 50 caracteres</span>
+                        <input class="formcontato__input required" type="email" id="email" placeholder="Email" oninput="validaEmail()">
+                        <span class="span-campo-vazio">Campo do email não pode estar vazio</span>
+                        <span class="span-limite-caracteres">Campo do email deve ter no máximo 50 caracteres</span>
+                        <span class="span-email-invalido">Digite um email válido</span>
+                        <input class="formcontato__input required" type="text" id="assunto" placeholder="Assunto" oninput="validaAssunto()">
+                        <span class="span-campo-vazio">Campo do assunto não pode estar vazio</span>
+                        <span class="span-limite-caracteres">Campo do assunto deve ter no máximo 50 caracteres</span>
+                        <textarea class="formcontato__textarea required" rows="5" cols="40" id="mensagem" name="mensagem"
                             placeholder="Sua mensagem" oninput="validaMensagem()"></textarea>
-                        <button class="formcontato__botao" onclick="enviar()">Enviar mensagem</button>
+                        <span class="span-campo-vazio">Campo da mensagem não pode estar vazio</span>
+                        <span class="span-limite-caracteres">Campo da mensagem deve ter no máximo 300 caracteres</span>
+                        <button class="formcontato__botao" type="submit" onclick="enviar()">Enviar mensagem</button>
                     </form>
                 </div>
             </div>

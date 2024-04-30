@@ -1,68 +1,114 @@
-/*let nome = document.getElementById('nome');
-let email = document.getElementById('email');
-let assunto = document.getElementById('assunto');
-let mensagem = document.getElementById('mensagem');*/
+const form = document.getElementById('formcontato__form');
+const campos = document.querySelectorAll('.required');
+const spanCampoVazio = document.querySelectorAll('.span-campo-vazio');
+const spanLimiteCaracteres = document.querySelectorAll('.span-limite-caracteres');
+const spanEmailInvalido = document.querySelectorAll('.span-email-invalido');
+const emailRegex = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
 
-var inputs = document.querySelectorAll('.formcontato__input, .formcontato__textarea');
-var button = document.querySelectorAll('formcontato__botao');
+function setErrorCampoVazio(index) {
+    spanCampoVazio[index].style.display = 'block';
+}
+
+function setErrorLimiteCaracteres(index) {
+    spanLimiteCaracteres[index].style.display = 'block';
+}
+
+function setErrorEmail() {
+    spanEmailInvalido[0].style.display = 'block';
+}
+
+function removeErrorCampoVazio(index) {
+    spanCampoVazio[index].style.display = 'none';
+}
+
+function removeErrorLimiteCaracteres(index) {
+    spanLimiteCaracteres[index].style.display = 'none';
+}
+
+function removeErrorEmail() {
+    spanEmailInvalido[0].style.display = 'none';
+}
+
 
 function validaNome() {
-    if (nome.value.length == 0) {
-        nome.innerHTML = 'O campo Nome não pode estar vazio';
-        nome.style.color = 'red';
-    } else if (nome.value.length > 50) {
-        nome.innerHTML = 'Nome pode ter no máximo 50 caracteres';
-        nome.style.color = 'red';
-    } else if (nome.value.length <= 50) {
-        nome.style.color = 'black';
+    if (campos[0].value.length == 0) {
+        setErrorCampoVazio(0);
+    }
+    else {
+        removeErrorCampoVazio(0);
+    }
+
+    if (campos[0].value.length > 50) {
+        setErrorLimiteCaracteres(0);
+    }
+    else {
+        removeErrorLimiteCaracteres(0);
     }
 }
 
 function validaEmail() {
-    if (email.value.indexOf('@') == -1 || email.value.indexOf('.') == -1) {
-        email.innerHTML = 'Email inválido';
-        email.style.color = 'red';
+    if (campos[1].value.length == 0) {
+        setErrorCampoVazio(1);
     }
+    else {
+        removeErrorCampoVazio(1);
+    }
+    if (!emailRegex.test(campos[1].value)) {
+        setErrorEmail(1);
+    }
+    else {
+        removeErrorEmail(1);
+    }
+
 }
 
 function validaAssunto() {
+    if (campos[2].value.length == 0) {
+        setErrorCampoVazio(2);
+    }
+    else {
+        removeErrorCampoVazio(2);
+    }
 
+    if (campos[2].value.length > 50) {
+        setErrorLimiteCaracteres(2);
+    }
+
+    else {
+        removeErrorLimiteCaracteres(2);
+
+    }
 }
 
 function validaMensagem() {
-    
+    if (campos[3].value.length == 0) {
+        setErrorCampoVazio(3);
+    }
+    else {
+        removeErrorCampoVazio(3);
+    }
+
+    if (campos[3].value.length > 300) {
+        setErrorLimiteCaracteres(3);
+    }
+    else {
+        removeErrorLimiteCaracteres(3);
+    }
 }
 
 function enviar() {
-    if (nome.style.color != 'red' && email.style != 'red') {
+    if (campos[0].value.length == 0 || campos[1].value.length == 0 || campos[2].value.length == 0 || campos[3].value.length == 0 || campos[0].value.length > 50 || campos[1].value.length > 50 || campos[2].value.length > 50 || campos[3].value.length > 300 || !emailRegex.test(campos[1].value)) {
+        alert('Preencha todos os campos obrigatórios corretamente!');
+    }
+    else {
         alert('Formulário enviado com sucesso!');
-    } else if (button.disabled == true) {
-        alert('Formulário já foi enviado, aguarde a resposta...');
-    
-    } else {
-        alert('Preencha o formulário corretamente antes de enviar...');
     }
 }
 
-// Function to check if all fields are filled
-function checkFields() {
-    for (var i = 0; i < inputs.length; i++) {
-        if (inputs[i].value === '') {
-            return false;
-        }
-    }
-    return true;
-}
-
-// Add event listener to each input and textarea
-for (var i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener('input', function() {
-        if (checkFields()) {
-            button.disabled = false;
-        } else {
-            button.disabled = true;
-        }
-    });
-}
-
-button.disabled = true;
+form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    validaNome();
+    validaEmail();
+    validaAssunto();
+    validaMensagem();
+});

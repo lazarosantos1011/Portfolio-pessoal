@@ -1,12 +1,7 @@
 /*CSS Reset / Normalize*/
-/*Já deixaremos o básico de reset de estilos. Caso queira adicionar mais informações
-coloque nas sessões indicadas*/
-
 @import url("reset.css");
 
 :root {
-    /*Insira a variavel das outras cores inspecionando o modelo do figma*/
-    /*Se esforce para trabalhar com variáveis, é uma dica profissional valiosa*/
     --cor-de-fundo-1: #F5F5F5;
     --cor-de-fundo-2: #EAF2FD;
     --cor-de-link: #000;
@@ -51,12 +46,7 @@ button:hover {
     cursor: pointer;
 }
 
-/*Neste desafio, gostariamos que praticassem a metodologia BEM, caso se sintam a vontade 
-de utiliza-la. 
-
-Mas o que é o BEM?
-
-BEM (Block, Element, Modifier) ​​é uma abordagem baseada em componentes para o desenvolvimento
+/*BEM (Block, Element, Modifier) ​​é uma abordagem baseada em componentes para o desenvolvimento
 web. A ideia por trás disso é dividir a interface do usuário em blocos independentes.
 Isso torna o desenvolvimento de interface fácil e rápido, mesmo com uma interface
 de usuário complexa, e permite a reutilização de código existente sem copiar e colar.
@@ -65,8 +55,6 @@ Link da documentação oficial!
 https://en.bem.info/methodology/quick-start/*/
 
 /*Sessão Menu*/
-
-
 
 header img {
     width: 22px;
@@ -490,10 +478,6 @@ section.formcontato {
     font-family: 'Raleway';
 }
 
-.formcontato__input:focus::placeholder {
-
-}
-
 .formcontato__textarea:focus {
     border-bottom: 2px solid #2A7AE4;
 }
@@ -512,6 +496,27 @@ section.formcontato {
     background-color: #5595E9;
 }
 
+.span-campo-vazio {
+    font-size: 12px;
+    color: #ff0000;
+    display: none;
+    margin-left: 1px;
+}
+
+.span-limite-caracteres {
+    font-size: 12px;
+    color: #ff0000;
+    display: none;
+    margin-left: 1px;
+}
+
+.span-email-invalido {
+    font-size: 12px;
+    color: #ff0000;
+    display: none;
+    margin-left: 1px;
+}
+
 /*footer*/
 
 section.footer {
@@ -525,8 +530,9 @@ div.footer__rodape {
     align-items: center;
 }
 
-/* Chegou a hora de se desafiar com a responsividade, 
-utilize como referência os breakpoints @media abaixo*/
+
+
+/* Media Queries */
 
 /*Tablet*/
 @media (min-width: 768px) {
