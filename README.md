@@ -2,7 +2,7 @@
 ---
 
 <p align="center" >
-     <img width="600" heigth="600" src="<blockquote class="imgur-embed-pub" lang="en" data-id="a/W8XdcS6"  ><a href="//imgur.com/a/W8XdcS6">Portfólio pessoal</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>">
+     <img width="600" heigth="600" src="<blockquote class="imgur-embed-pub" lang="en" data-id="a/W8XdcS6"  ><a href="//imgur.com/a/W8XdcS6">Portfólio pessoal</a></blockquote>">
 </p>
 
 <p align="center" >
